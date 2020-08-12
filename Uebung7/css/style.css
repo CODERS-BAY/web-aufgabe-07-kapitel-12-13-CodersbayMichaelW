@@ -17,6 +17,35 @@ body {
 
 /* header */
 /* nav-bar */
+.header-pic {
+    min-height: 60vh;
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.4),
+        rgba(0, 0, 0, 0.4)
+      ),url('../img/rsz_zoo-background.jpg');
+    background-position: center 30%;
+
+    border-bottom: 0.5rem solid rgb(255, 163, 77);
+}
+.header-div {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    font-size: 4rem;
+    color: white;
+    text-transform: uppercase;
+    position: absolute;
+    color: white;
+
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    text-shadow: 0px 0px 6px rgb(255, 255, 255);
+  }
+.titel::first-line {
+    font-size: 6rem;
+    letter-spacing: 0.5rem;
+}
 nav {
     position: fixed;
     top: 0;
@@ -35,6 +64,8 @@ ul {
 a {
     text-decoration: none;
     color: rgba(255, 255, 255, 1);
+
+    transition: all 0.6s linear;
 } 
 a:hover {
     background-color: rgb(0, 0, 0);
@@ -78,12 +109,14 @@ li > p {
 /* welcome page */
 .welcome-div {
     background-image:     linear-gradient(
-        rgba(0, 0, 0, 0.3),
-        rgba(0, 0, 0, 0.3)
+        rgba(0, 0, 0, 0.4),
+        rgba(0, 0, 0, 0.4)
       ),
     url("../img/rsz_zoo-background.jpg");
     background-size: cover;
+    background-position: center;
     height: 100vh;
+    border-bottom: 0.5rem solid rgb(255, 163, 77);
 }
 .welcome-div {
     position: relative;
@@ -100,6 +133,8 @@ li > p {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    text-shadow: 0px 0px 6px rgb(255, 255, 255);
 }
 .titel::first-line {
     font-size: 6rem;
@@ -303,9 +338,23 @@ td:first-child:active::first-letter {
 
 /* Contact PAge */
 /* Contact */
-.contact-img img {
+.contact-img {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.contact-form img {
+    width: 100%;
+    margin-left: 5rem;
+    border-radius: 100%;
+
     border: 2px solid blue;
     box-shadow: 2px 2px 50px rgba(8, 112, 184, 0.7);
+    transition: margin-left 1s, border-radius 2s;
+}
+.contact-img img:hover {
+    /* transform: translateY(-15px); */
+    border-radius: 10%;
+    margin-left: 0;
 }
 .contact-form {
     display: flex;
@@ -317,15 +366,6 @@ td:first-child:active::first-letter {
 }
 .contact-form div {
     width: 50%;
-}
-.contact-img {
-    margin-top: auto;
-    margin-bottom: auto;
-}
-.contact-form img {
-    width: 100%;
-    margin-left: 5rem;
-    border-radius: 100%;
 }
 label {
     margin-top: 2rem;
@@ -386,15 +426,19 @@ form p input {
 }
 .submit {
     background-color: rgb(255, 141, 60);
+    transition: all 0.5s;
 }
 .reset {
     background-color: rgb(0, 153, 255);
+    transition: all 0.5s;
 }
 .submit:hover {
     background-color: rgb(255, 106, 0);
+    transform: scale(1.05);
 }
 .reset:hover {
     background-color: rgb(0, 195, 255);
+    transform: scale(1.05);
 }
 @media (max-width: 60em) {
     .contact-form {
@@ -434,6 +478,8 @@ footer {
     background-color: rgba(0, 0, 0, 0.7);
     /* background-color: #FBD786; */
     padding: 2rem 0;
+
+    border-top: 0.5rem solid rgb(255, 163, 77);
 }
 .contact-section {
     display: flex;
@@ -465,9 +511,30 @@ footer {
 }
 .icons {
     font-size: 2.4rem;
-    text-shadow: 2px 2px 1px #1f1f1f;
+    text-shadow: 2px 2px 1px rgb(31, 31, 31);
     transition: transform 0.3s ease-out;
     padding: 1.5rem;
+
+    color: #e0dfdc;
+    letter-spacing: .1em;
+    text-shadow: 
+        0 -1px 0 rgb(255, 255, 255), 
+        0 1px 0 rgb(46, 46, 46), 
+        0 2px 0 rgb(44, 44, 44), 
+        0 3px 0 rgb(42, 42, 42), 
+        0 4px 0 rgb(40, 40, 40), 
+        0 5px 0 rgb(38, 38, 38), 
+        0 6px 0 rgb(36, 36, 36), 
+        0 7px 0 rgb(34, 34, 34), 
+        0 8px 0 rgb(32, 32, 32), 
+        0 9px 0 rgb(30, 30, 30), 
+        0 10px 0 rgb(28, 28, 28), 
+        0 11px 0 rgb(26, 26, 26), 
+        0 12px 0 rgb(24, 24, 24), 
+        0 13px 0 rgb(22, 22, 22), 
+        0 14px 0 rgb(20, 20, 20), 
+        0 15px 0 rgb(18, 18, 18), 
+        0 22px 30px rgba(0, 0, 0, 0.9);
 }
 .icons:hover {
     transform: translateY(8px);
@@ -482,8 +549,12 @@ i {
 .arrow {
     border: solid rgb(0, 255, 255);
     border-width: 0 3px 3px 0;
+    border-left: none;
+    border-top: none;
     display: inline-block;
     padding: 10px;
+
+    box-shadow: 3px 3px 4px rgb(0, 255, 255);
 }
 .down {
     transform: rotate(45deg);
@@ -498,3 +569,12 @@ i {
       text-align: center;
     }
 }
+
+/* transition */
+/* homepage */
+/* youtube -> pictures */
+#youtube-picture {
+    padding: 5rem 0;
+    background-image: linear-gradient(180deg, rgb(255, 255, 255), rgb(230, 230, 230));
+}
+
